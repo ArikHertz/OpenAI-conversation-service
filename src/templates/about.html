@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}About - Flask ChatGPT{% endblock %}
+
+{% block content %}
+<section class="about-page py-5">
+  <div class="container chat-container">
+    <div class="text-center mb-5">
+      <h1 class="display-6 fw-semibold">About</h1>
+      <p class="text-muted">Learn more about this application and its developer.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card about-card h-100 shadow-sm border-0">
+          <div class="card-body p-4">
+            <h2 class="h5 card-title mb-3">System Information</h2>
+            <p class="card-text text-muted">
+              This system demonstrates a ChatGPT-style web application built using Flask, MySQL and OpenAI.
+              It uses server-side rendering with Jinja2 templates, stores every conversation in a MySQL database,
+              and sends the full message history to OpenAI so the assistant can maintain context within a session.
+            </p>
+            <ul class="list-unstyled small text-muted mb-0">
+              <li><strong>Backend:</strong> Python Flask</li>
+              <li><strong>Database:</strong> MySQL with SQLAlchemy</li>
+              <li><strong>AI:</strong> OpenAI Chat Completions API</li>
+              <li><strong>Frontend:</strong> HTML, CSS, JavaScript, Bootstrap 5</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card about-card h-100 shadow-sm border-0">
+          <div class="card-body p-4">
+            <h2 class="h5 card-title mb-3">Developer Information</h2>
+            <dl class="row mb-0">
+              <dt class="col-sm-4">Name:</dt>
+              <dd class="col-sm-8 text-muted">Arik Hertz</dd>
+
+              <dt class="col-sm-4">Email:</dt>
+              <dd class="col-sm-8 text-muted">arikhertzw@gmail.com</dd>
+
+              <dt class="col-sm-4">GitHub:</dt>
+              <dd class="col-sm-8">
+                <a href="https://github.com/ArikHertz" target="_blank" rel="noopener noreferrer">
+                  github.com/ArikHertz
+                </a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

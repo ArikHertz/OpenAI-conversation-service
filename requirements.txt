@@ -1,0 +1,8 @@
+Flask
+Flask-SQLAlchemy
+Flask-WTF
+python-dotenv
+openai
+PyMySQL
+gunicorn
+cryptography

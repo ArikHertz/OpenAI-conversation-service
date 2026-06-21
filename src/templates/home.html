@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Flask ChatGPT{% endblock %}
+
+{% block content %}
+<section class="chat-page d-flex flex-column">
+  <div class="container chat-container flex-grow-1 d-flex flex-column">
+    <div class="chat-header d-flex justify-content-between align-items-center py-3">
+      <div>
+        <h1 class="h4 mb-1">Chat</h1>
+        <p class="text-muted small mb-0">Ask anything and continue the conversation in context.</p>
+      </div>
+      <form method="POST" action="{{ url_for('main.new_conversation') }}" class="new-conversation-form">
+        {{ new_conversation_form.hidden_tag() }}
+        {{ new_conversation_form.submit(class="btn btn-outline-secondary btn-sm") }}
+      </form>
+    </div>
+
+    <div id="chat-area" class="chat-area flex-grow-1">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="message-row message-{{ message.role.value }}">
+            <div class="message-bubble">
+              <div class="message-role"><b><i>{{ message.role.value|capitalize }}:</i></b></div> 
+              <div class="message-content">{{ message.content }}</div>
+            </div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div class="empty-state text-center">
+          <div class="empty-icon mb-3">💬</div>
+          <h2 class="h5">Start a new conversation</h2>
+          <p class="text-muted mb-0">Send your first message below.</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="chat-input-bar border-top bg-white">
+    <div class="container chat-container py-3">
+      <form method="POST" action="{{ url_for('main.home') }}" class="chat-form" id="chat-form">
+        {{ chat_form.hidden_tag() }}
+        <div class="input-group chat-input-group">
+          {{ chat_form.content }}
+          {{ chat_form.submit }}
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}
