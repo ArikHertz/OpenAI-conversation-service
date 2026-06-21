@@ -2,6 +2,8 @@
 
 A web-based AI chat application inspired by ChatGPT. Send messages, receive AI-powered replies, and continue conversations with full context — every message is stored in a MySQL database.
 
+**Repository:** [github.com/ArikHertz/OpenAI-conversation-service]
+
 ## Features
 
 - **Context-aware chat** — The full conversation history is sent to OpenAI on each request, so the assistant remembers earlier messages within a session.
@@ -146,3 +148,6 @@ GitHub: (https://github.com/ArikHertz)
 ## License
 
 This project is for educational purposes.
+
+
+[def]: https://github.com/ArikHertz/OpenAI-conversation-service
