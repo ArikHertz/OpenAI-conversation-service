@@ -141,7 +141,7 @@ flask run
 
 **Arik Hertz**  
 Email: arikhertzw@gmail.com  
-GitHub: [github.com/yourusername](https://github.com/ArikHertz)
+GitHub: (https://github.com/ArikHertz)
 
 ## License
 
